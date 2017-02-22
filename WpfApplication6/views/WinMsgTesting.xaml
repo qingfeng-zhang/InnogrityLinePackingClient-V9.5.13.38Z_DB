@@ -1,0 +1,70 @@
+﻿<Window x:Class="InnogrityLinePackingClient.views.WinMsgTesting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InnogrityLinePackingClient.views"
+        mc:Ignorable="d"
+        Title="WinMsgTesting"  Width="1200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="450" />
+            <ColumnDefinition Width="450"  />
+            <ColumnDefinition  />
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="Alarm" Grid.Column="0"  Grid.Row="0" >
+            <Grid  Grid.Column="0"  Grid.Row="0" Background="AntiqueWhite">
+                <Label Content="Alarm Message" HorizontalAlignment="Left" Margin="146,29,0,0" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="150,86,0,0" TextWrapping="Wrap" Text="2103" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="AlarmID" HorizontalAlignment="Left" Height="23" Margin="150,86,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="0"/>
+                <TextBox x:Name="AlarmDes" HorizontalAlignment="Left" Height="23" Margin="150,124,0,0" TextWrapping="Wrap" Text="STN2:[RA] ROTARY A SERVO ALARM[JAM]" VerticalAlignment="Top" Width="250"/>
+                <TextBox x:Name="AlarmStatus" HorizontalAlignment="Left" Height="23" Margin="150,161,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Alarm Status" HorizontalAlignment="Left" Margin="15,161,0,0" VerticalAlignment="Top"/>
+                <Label Content="Alarm Description" HorizontalAlignment="Left" Margin="15,124,0,0" VerticalAlignment="Top"/>
+                <Label Content="Alarm ID" HorizontalAlignment="Left" Margin="15,86,0,0" VerticalAlignment="Top"/>
+                <Button Content="SendAlarm" HorizontalAlignment="Left"  Margin="154,282,0,0" Click="Button_Click_1" VerticalAlignment="Top" Width="75"/>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Event" Grid.Column="1"  Grid.Row="0"     >
+            <Grid  Grid.Column="1"  Grid.Row="0" Background="Beige"  >
+                <Label Content="Event Message" HorizontalAlignment="Left" Margin="146,29,0,0" VerticalAlignment="Top"/>
+                <Label Content="Event Description" HorizontalAlignment="Left" Margin="5,124,0,0" VerticalAlignment="Top"/>
+                <Label Content="Event ID" HorizontalAlignment="Left" Margin="5,86,0,0" VerticalAlignment="Top"/>
+
+                <Label Content="Event AttributeValue" HorizontalAlignment="Left" Margin="5,210,0,0" VerticalAlignment="Top"/>
+                <Label Content="Event AttributeName" HorizontalAlignment="Left" Margin="5,172,0,0" VerticalAlignment="Top"/>
+
+                <TextBox x:Name="EventID" HorizontalAlignment="Left" Height="23" Margin="150,86,0,0" TextWrapping="Wrap" Text="2060" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="EventDes" HorizontalAlignment="Left" Height="23" Margin="150,124,0,0" TextWrapping="Wrap" Text="Station2RALifterUp" VerticalAlignment="Top" Width="250"/>
+                <TextBox x:Name="EventAtt" HorizontalAlignment="Left" Height="23" Margin="150,172,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="EventAttValue" HorizontalAlignment="Left" Height="23" Margin="150,210,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <Button Content="SendEvent" HorizontalAlignment="Left"  Margin="154,282,0,0"   VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Misc" Grid.Column="2"  Grid.Row="0"     >
+            <Grid  Grid.Column="2"  Grid.Row="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="321*"/>
+                    <RowDefinition Height="13*"/>
+                    <RowDefinition Height="0*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Parameter Change" HorizontalAlignment="Left" Margin="119,28,0,0" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="147,81,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="ParamName" HorizontalAlignment="Left" Height="23" Margin="147,81,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="OldValue" HorizontalAlignment="Left" Height="23" Margin="147,119,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="NewValue" HorizontalAlignment="Left" Height="23" Margin="147,156,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                <Label Content="New Value" HorizontalAlignment="Left" Margin="24,156,0,0" VerticalAlignment="Top"/>
+                <Label Content="Old Value" HorizontalAlignment="Left" Margin="24,119,0,0" VerticalAlignment="Top"/>
+                <Label Content="Parameter Name" HorizontalAlignment="Left" Margin="24,81,0,0" VerticalAlignment="Top"/>
+                <Button Content="SendParameterchange" HorizontalAlignment="Left" Margin="107,190,0,0"   VerticalAlignment="Top" Width="150" Click="SendParameter_Click"  />
+                <Label Content="Serler Result" HorizontalAlignment="Left" Margin="119,250,0,0" VerticalAlignment="Top"/>
+                <Label Content="BoxID" HorizontalAlignment="Left" Margin="24,300,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="BoxID" HorizontalAlignment="Left" Height="23" Margin="147,300,0,0" TextWrapping="Wrap" Text="BYNDXLQ.21" VerticalAlignment="Top" Width="120"/>
+                <Button Content="Req Serler Result" HorizontalAlignment="Left" Margin="107,350,0,0"   VerticalAlignment="Top" Width="150" Click="ReqSealerResult_Click"  />
+
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

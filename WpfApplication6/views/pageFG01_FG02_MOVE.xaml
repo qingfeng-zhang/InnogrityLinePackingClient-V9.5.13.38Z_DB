@@ -1,0 +1,19 @@
+﻿<Page x:Class="InnogrityLinePackingClient.views.pageFG01_FG02_MOVE"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+	Title="pageFG01_FG02_MOVE">
+    <DockPanel MaxHeight="500" MaxWidth="500" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20">
+        <Viewbox>
+            <StackPanel>
+                <Label Content="ID TO FORCE REMOVE" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                    <TextBox x:Name="FGtxt" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Center" Width="100">BYNDXLQ.21</TextBox>
+                    <Button Content="Send" HorizontalAlignment="Stretch" VerticalAlignment="Center" Click="Button_Click_1" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch"/>
+                </StackPanel>
+            </StackPanel>
+        </Viewbox>
+    </DockPanel>
+</Page>

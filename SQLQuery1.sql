@@ -1,0 +1,1 @@
+﻿SELECT SUM(case Stat when '2' then 1 else 0 end)as PASS

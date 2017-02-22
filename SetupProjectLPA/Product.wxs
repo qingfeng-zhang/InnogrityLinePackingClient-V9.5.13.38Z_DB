@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="LPA_V100" Language="1033" Version="1.0.0.0" Manufacturer="Innogrity" UpgradeCode="2c642d63-f023-4c21-993e-c1166d1fc876">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="LPA_V100" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>C:\IGTupdate\InnogrityLinePackingClient V9.5.13.38Z\WpfApplication6\resources\
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="SetupProjectLPA" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			  <Component Id="ProductComponent"> 
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+      <File Source="$(var.Client.TargetPath)" />
+			 </Component>  
+		</ComponentGroup>
+	</Fragment>
+</Wix>

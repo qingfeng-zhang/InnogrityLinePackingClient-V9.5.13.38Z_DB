@@ -1,0 +1,170 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:testClient="clr-namespace:UnrelatedImageUriConverterClassNamespace"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
+         xmlns:local="clr-namespace:InnogrityLinePackingClient"
+         xmlns:bstvc="clr-namespace:UnrelatedBarcodeStatusToVisibilityConverterNamespace"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="InnogrityLinePackingClient.operator1window"
+        Title="Operator 1 - Station 6 - Innogrity" Height="600" Width="800" Icon="resources/Innogrity.png" Loaded="Window_Loaded">
+    <Window.Resources>
+        <testClient:ImageUriConverterClass x:Key="ImageUriConverter" />
+        <bstvc:BarcodeStatusToVisibilityConverter x:Key="BarcodeStatusToVisibilityConverterObject"/>
+        <bstvc:NotBarcodeStatusToVisibilityConverter x:Key="NotBarcodeStatusToVisibilityConverterObject"/>
+        <bstvc:NotAreaStatusToVisibilityConverter x:Key="NotAreaStatusToVisibilityConverterObject"/>
+        <bstvc:ErrorMessageToVisibilityConverter x:Key="ErrorMessageToVisibilityConverter"/>
+        <bstvc:VisibilityConvertor x:Key="VisibilityConvertorKey" />
+    </Window.Resources>
+
+    <DockPanel LastChildFill="True">
+        <Grid DockPanel.Dock="Bottom">
+            <TextBlock HorizontalAlignment="Left" FontSize="9"><Run Text="Stations with errors will be highlighted in red."/></TextBlock>
+            <TextBlock HorizontalAlignment="Right" FontSize="9"><Run Text="Innogrity © 2015"/></TextBlock>
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1.2*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border Background="#cacaca" BorderThickness="2" Padding="13" CornerRadius="5" Grid.Column="1" Grid.RowSpan="2" >
+                <Border.Effect>
+                    <DropShadowEffect Opacity="0.5"/>
+                </Border.Effect>
+            </Border>
+            <Border Background="#b8b8b8" BorderThickness="2" Padding="13" CornerRadius="5" Grid.Column="0" Grid.RowSpan="2">
+                <Border.Effect>
+                    <DropShadowEffect Opacity="0.5"/>
+                </Border.Effect>
+            </Border>
+
+            <Grid Margin="10" Grid.RowSpan="2">
+                <DockPanel LastChildFill="False">
+                    <GroupBox DockPanel.Dock="Top" Header="Operator 1">
+                        <Viewbox VerticalAlignment="Top" Stretch="Uniform" >
+                            <StackPanel Margin="7">
+                                <StackPanel Orientation="Horizontal" Height="30">
+                                    <Label Content="Box Number" Width="120" VerticalAlignment="Center"/>
+                                    <TextBox Margin="2" Width="100" Text= "{Binding networkmain.operator1BoxNumber, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" />
+                                    <Image x:Name="imgop1"  Source="/InnogrityLinePackingClient;component/resources/topic1_icon4.png" Visibility="{Binding ScannerStatus, Converter={StaticResource BarcodeStatusToVisibilityConverterObject}}" VerticalAlignment="Center"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Height="30">
+                                    <Label Content="Username" Width="120" VerticalAlignment="Center"/>
+                                    <TextBox Margin="2" Width="100" Text="{Binding UserName1, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" />
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Height="30">
+                                    <Label Width="120"  Content="Station 1 Box Count" VerticalAlignment="Center" />
+                                    <TextBox MinWidth="100"  Text= "{Binding st1POcount, UpdateSourceTrigger=PropertyChanged}"  Margin="2" VerticalAlignment="Center"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Height="30">
+                                    <Label Width="120"  Content="Station 1 Box Rejects" VerticalAlignment="Center" />
+                                    <TextBox  Width="100" Text= "{Binding st1Rejectcount, UpdateSourceTrigger=PropertyChanged}"  Margin="2" VerticalAlignment="Center"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Height="30">
+                                    <Label Width="120"  Content="Sealer Number" VerticalAlignment="Center" />
+                                    <TextBox  Width="100" Text= "{Binding SealerNumberQC1, UpdateSourceTrigger=PropertyChanged}"  Margin="2" VerticalAlignment="Center"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Height="30">
+                                    <WrapPanel Margin="2" MinHeight="30">
+                                        <TextBlock Margin="2"  Text="{Binding NetworkAddress, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" FontSize="9"/>
+                                    </WrapPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Viewbox>
+                    </GroupBox>
+
+                    <GroupBox DockPanel.Dock="Bottom" Header="Station #4 Active Errors">
+                        <WrapPanel  Margin="2" MinHeight="30">
+                            <TextBlock Margin="2" Text="{Binding networkmain.PLCErrorMessage[3], FallbackValue=PLCErrorMessage[station.Station04]}" TextWrapping="Wrap" FontSize="9"/>
+                        </WrapPanel>
+                    </GroupBox>
+
+                    <GroupBox DockPanel.Dock="Bottom" Header="Station #3 Active Errors">
+                        <WrapPanel  Margin="2" MinHeight="30">
+                            <TextBlock Margin="2" Text="{Binding networkmain.PLCErrorMessage[2], FallbackValue=PLCErrorMessage[station.Station03]}" TextWrapping="Wrap" FontSize="9"/>
+                        </WrapPanel>
+                    </GroupBox>
+
+                    <GroupBox DockPanel.Dock="Bottom" Header="Station #2 Active Errors">
+                        <WrapPanel  Margin="2" MinHeight="30">
+                            <TextBlock Margin="2" Text="{Binding networkmain.PLCErrorMessage[1], FallbackValue=PLCErrorMessage[station.Station02]}" TextWrapping="Wrap" FontSize="9"/>
+                        </WrapPanel>
+                    </GroupBox>
+
+                    <GroupBox  DockPanel.Dock="Bottom" Header="Station #1 Active Errors">
+                        <WrapPanel Margin="2" MinHeight="30">
+                            <TextBlock Margin="2" Text="{Binding networkmain.PLCErrorMessage[0], FallbackValue=PLCErrorMessage[station.Station01]}" TextWrapping="Wrap" FontSize="9"/>
+                        </WrapPanel>
+                    </GroupBox>
+
+                </DockPanel>
+            </Grid>
+
+            <!--Operator Images and Message-->
+
+            <Grid Margin="10" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+                <DockPanel LastChildFill="False">
+                    <GroupBox DockPanel.Dock="Top" Header="Operator Message">
+                        <StackPanel>
+                            <Viewbox Stretch="Uniform" Height="150" Margin="10,10,10,0" VerticalAlignment="Top">
+                                <Image HorizontalAlignment="Left"  VerticalAlignment="Top" Source="{Binding networkmain.ImgFullpath, Converter={StaticResource ImageUriConverter}, FallbackValue=file:///C:/Station6_image_temp/defaultimage.bmp}"/>
+                            </Viewbox>
+                            <Viewbox Stretch="Uniform" VerticalAlignment="Top" MaxHeight="22">
+                                <TextBlock Margin="10,0,10,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding networkmain.Operator1message, FallbackValue=&lt;Operator 1 MESSAGE&gt;}" />
+                            </Viewbox>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox DockPanel.Dock="Bottom" Header="Station #8 Active Errors">
+                        <WrapPanel  Margin="2" MinHeight="30">
+                            <TextBlock Margin="2" Text="{Binding networkmain.PLCErrorMessage[8], FallbackValue=PLCErrorMessage[station.Station08]}" TextWrapping="Wrap" FontSize="9"/>
+                        </WrapPanel>
+                    </GroupBox>
+
+                    <GroupBox DockPanel.Dock="Bottom" Header="Station #7 Active Errors">
+                        <WrapPanel  Margin="2" MinHeight="30">
+                            <TextBlock Margin="2" Text="{Binding networkmain.PLCErrorMessage[7], FallbackValue=PLCErrorMessage[station.Station07]}" TextWrapping="Wrap" FontSize="9"/>
+                        </WrapPanel>
+                    </GroupBox>
+                    <GroupBox DockPanel.Dock="Bottom" Header="Station #6 Active Errors">
+                        <WrapPanel  Margin="2" MinHeight="30">
+                            <TextBlock Margin="2" Text="{Binding networkmain.PLCErrorMessage[5], FallbackValue=PLCErrorMessage[station.Station06]}" TextWrapping="Wrap" FontSize="9"/>
+                            <TextBlock Margin="2" Text="{Binding networkmain.PLCErrorMessage[6], FallbackValue=PLCErrorMessage[station.Station06]}" TextWrapping="Wrap" FontSize="9"/>
+                        </WrapPanel>
+                    </GroupBox>
+                    <GroupBox DockPanel.Dock="Bottom" Header="Station #5 Active Errors">
+                        <WrapPanel  Margin="2" MinHeight="30">
+                            <TextBlock Margin="2" Text="{Binding networkmain.PLCErrorMessage[4], FallbackValue=ERROR}" TextWrapping="Wrap" FontSize="9"/>
+                        </WrapPanel>
+                    </GroupBox>
+                </DockPanel>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="0">
+
+                <StackPanel Margin="0,28,-0.4,0.2">
+                    
+                    <TextBlock Padding="50,5,50,15" FontSize="30" TextAlignment="Center" Background="{Binding SafetyStatus, Converter={StaticResource NotAreaStatusToVisibilityConverterObject}, FallbackValue=#CCF0C30F}" Text="{Binding SafetyStatus, Converter={StaticResource NotAreaStatusToVisibilityConverterObject}, FallbackValue=Please Scan Bag}" Visibility="{Binding SafetyStatus, Converter={StaticResource NotAreaStatusToVisibilityConverterObject}}" VerticalAlignment="Top" />
+                    <TextBlock Padding="50,5,50,15" FontSize="30" TextAlignment="Center" Background="{Binding ScannerStatus, Converter={StaticResource NotBarcodeStatusToVisibilityConverterObject}, FallbackValue=#CCF0C30F}" Text="{Binding ScannerStatus, Converter={StaticResource NotBarcodeStatusToVisibilityConverterObject}, FallbackValue=Please Scan Bag}" Visibility="{Binding ScannerStatus, Converter={StaticResource NotBarcodeStatusToVisibilityConverterObject}}" VerticalAlignment="Top" />              
+                    <TextBlock Padding="50,5,50,5" FontSize="20" TextAlignment="Center" Background="#CCFF0000" Text="{Binding networkmain.CriticalErrors0, FallbackValue=ERROR}" Visibility="{Binding networkmain.CriticalErrors0, Converter={StaticResource VisibilityConvertorKey}}" VerticalAlignment="Top" />
+                    <TextBlock Padding="50,5,50,5" FontSize="20" TextAlignment="Center" Background="#CCFF0000" Text="{Binding networkmain.CriticalErrors1, FallbackValue=ERROR}" Visibility="{Binding networkmain.CriticalErrors1, Converter={StaticResource VisibilityConvertorKey}}" VerticalAlignment="Top" />
+                    <TextBlock Padding="50,5,50,5" FontSize="20" TextAlignment="Center" Background="#CCFF0000" Text="{Binding networkmain.CriticalErrors2, FallbackValue=ERROR}" Visibility="{Binding networkmain.CriticalErrors2, Converter={StaticResource VisibilityConvertorKey}}" VerticalAlignment="Top" />
+                    <TextBlock Padding="50,5,50,5" FontSize="20" TextAlignment="Center" Background="#CCFF0000" Text="{Binding networkmain.CriticalErrors3, FallbackValue=ERROR}" Visibility="{Binding networkmain.CriticalErrors3, Converter={StaticResource VisibilityConvertorKey}}" VerticalAlignment="Top" />
+                    <TextBlock Padding="50,5,50,5" FontSize="20" TextAlignment="Center" Background="#CCFF0000" Text="{Binding networkmain.CriticalErrors4, FallbackValue=ERROR}" Visibility="{Binding networkmain.CriticalErrors4, Converter={StaticResource VisibilityConvertorKey}}" VerticalAlignment="Top" />
+                    <TextBlock Padding="50,5,50,5" FontSize="20" TextAlignment="Center" Background="#CCFF0000" Text="{Binding networkmain.CriticalErrors5, FallbackValue=ERROR}" Visibility="{Binding networkmain.CriticalErrors5, Converter={StaticResource VisibilityConvertorKey}}" VerticalAlignment="Top" />
+                    <TextBlock Padding="50,5,50,5" FontSize="20" TextAlignment="Center" Background="#CCFF0000" Text="{Binding networkmain.CriticalErrors6, FallbackValue=ERROR}" Visibility="{Binding networkmain.CriticalErrors6, Converter={StaticResource VisibilityConvertorKey}}" VerticalAlignment="Top" />
+                    <TextBlock Padding="50,5,50,5" FontSize="20" TextAlignment="Center" Background="#CCFF0000" Text="{Binding networkmain.CriticalErrors7, FallbackValue=ERROR}" Visibility="{Binding networkmain.CriticalErrors7, Converter={StaticResource VisibilityConvertorKey}}" VerticalAlignment="Top" />
+                    <TextBlock Padding="50,5,50,5" FontSize="20" TextAlignment="Center" Background="#CCFF0000" Text="{Binding networkmain.CriticalErrors8, FallbackValue=ERROR}" Visibility="{Binding networkmain.CriticalErrors8, Converter={StaticResource VisibilityConvertorKey}}"  VerticalAlignment="Top" />
+
+                </StackPanel>
+
+            </Grid>
+
+        </Grid>
+    </DockPanel>
+</Window>

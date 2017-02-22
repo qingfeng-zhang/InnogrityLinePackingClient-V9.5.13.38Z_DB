@@ -1,0 +1,62 @@
+﻿<Page x:Class="InnogrityLinePackingClient.views.Station1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+     mc:Ignorable="d" 
+         d:DesignHeight="900" d:DesignWidth="625.94"
+	Title="Station1" Width="786.567">
+
+    <Grid >
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="0.5*" />
+            
+        </Grid.RowDefinitions>
+
+
+        <Image x:Name="img1" Grid.RowSpan="2" Grid.Column="0"  Grid.Row ="0" Canvas.Left="205" Canvas.Top="38" Source="/InnogrityLinePackingClient;component/resources/Station1.png" Margin="0,104,0,223" />
+        <Grid Grid.Column="1"  Grid.Row ="0" Margin="5,0,0,0" Grid.RowSpan="2" >
+            <Grid.DataContext >
+                <XmlDataProvider x:Name="St1FLdataprovider" XPath="LABELS"/>
+            </Grid.DataContext >
+            <DockPanel >
+
+                <!--<ListView x:Name="listbox" Margin="26,104,26,223" 
+        	ItemsSource="{Binding XPath=LABEL}"
+        	IsSynchronizedWithCurrentItem="True"
+        	Visibility="Visible" SelectionMode="Single">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding XPath=ID}" Header="Finishing Label"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding XPath=TYPE}" Header="Product Type"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding XPath=STATION}" Header="Station ID"/>
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>-->
+
+            </DockPanel>
+        </Grid>
+        <Label Content="Station 1" HorizontalAlignment="Left" Margin="275,10,0,0" VerticalAlignment="Top" Width="139" FontSize="16" FontWeight="Bold" FontFamily="Times New Roman"/>
+        <!--<Button x:Name="BtnFLStation1"   Grid.Column="1"  Grid.Row ="1"   Click="Button_Click_1" Content="Finishing Label"   RenderTransformOrigin="0.525,1.061" Margin="10,24,269,106"  />
+        <TextBox x:Name="BoxID1"  Grid.Column="1"  Grid.Row ="1" Text="Box112"  RenderTransformOrigin="0.5,0.5" Margin="143,24,21,110" >
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.857"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="3.716"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>-->
+        <!--<Button Content="Move" Grid.Column="1" HorizontalAlignment="Left" Margin="10,100,0,0" Grid.Row="1" VerticalAlignment="Top" Width="114" Height="38" Click="MoveButton_Click"/>
+        <TextBox x:Name="MoveBoxID1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="145,100,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Box112" VerticalAlignment="Top" Width="230"/>-->
+
+    </Grid>
+</Page>

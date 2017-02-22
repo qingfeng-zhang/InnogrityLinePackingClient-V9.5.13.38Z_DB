@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="IGTwpf.views.Base.Header"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" >
+
+    <DockPanel >
+        <Viewbox DockPanel.Dock="Left" Margin="12" Width="200">
+            <Image Source="/InnogrityLinePackingClient;component/resources/Innogrity full.png"></Image>
+        </Viewbox>
+        <Label Content= "{Binding NetworkAddress, UpdateSourceTrigger=PropertyChanged}"    HorizontalAlignment="Center" Margin="15" VerticalAlignment="Center" Height="50" FontSize="18" FontFamily="Arial Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+    </DockPanel>
+</UserControl>

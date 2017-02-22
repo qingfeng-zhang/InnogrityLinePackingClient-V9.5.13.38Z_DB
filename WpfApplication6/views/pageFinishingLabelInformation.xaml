@@ -1,0 +1,230 @@
+﻿<Page x:Class="InnogrityLinePackingClient.views.pageFinishingLabelInformation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+         d:DesignHeight="800" d:DesignWidth="1200" 
+	Title="pageFinishingLabelInformation" Background="WhiteSmoke">
+    <Page.Resources>
+        <XmlDataProvider x:Key="TnRdataprovider" Source="c:\Printer01xml.xml" XPath="BOXID"/>
+        <XmlDataProvider x:Key="Data"/>
+    </Page.Resources>
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.RowSpan="3" >
+            <DockPanel>
+                <GroupBox Header="Advanced Functions" DockPanel.Dock="Bottom" Margin="5">
+                    <StackPanel Margin="2">
+                        <DockPanel Grid.Column="0" Height="30" VerticalAlignment="Top">
+                            <Button DockPanel.Dock="Right" Name="BtnReqFL"    Click="Button_Click_1" Background="#FFC1E48E">REQUEST Label</Button>
+                            <TextBox DockPanel.Dock="Left" x:Name="BoxID"  VerticalContentAlignment="Center" Background="#FFC1E48E" HorizontalAlignment="Stretch">BYNDXLQ.21</TextBox>
+                        </DockPanel>
+
+                        <DockPanel Grid.Column="0" Height="30" VerticalAlignment="Top">
+                            <Button DockPanel.Dock="Right" Content="REMOVE Label" Click="RemoveLabel" Background="#FFFF8484"/>
+                            <TextBox DockPanel.Dock="Left" VerticalContentAlignment="Center" x:Name="FGtxt" Background="#FFFF8484">BYNDXLQ.21</TextBox>
+                        </DockPanel>
+                        <Button DockPanel.Dock="Right" Name="RESETBUTTON" FontSize="20" Click="RESET" Background="#FFE42929">REMOVE ALL LABELS</Button>
+                    </StackPanel>
+                </GroupBox>
+
+                <Grid>
+                    <Grid.DataContext >
+                        <XmlDataProvider x:Name="FLdataprovider" XPath="LABELS"/>
+                    </Grid.DataContext >
+                    <DockPanel>
+                        <TextBlock DockPanel.Dock="Top">List of Everything</TextBlock>
+                        <ListView DockPanel.Dock="Top" x:Name="listbox" 
+                                  ItemsSource="{Binding XPath= LABEL}"
+                                  IsSynchronizedWithCurrentItem="True"
+                                  Visibility="Visible" SelectionMode="Single"
+                                  ClipToBounds="True"
+                                  Background="GhostWhite">
+                            <ListView.View>
+                                <GridView>
+                                    <GridView.Columns>
+                                        <GridViewColumn DisplayMemberBinding="{Binding XPath=ID}" Header="Label" Width="100"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding XPath=TYPE}" Header="Type" Width="50"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding XPath=OEEid}" Header="OEE ID" Width="50"/>
+                                    </GridView.Columns>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </DockPanel>
+
+                    <Popup Name="popup" IsOpen="False" Placement="Mouse" RenderTransformOrigin="0.384,0.499">
+                        <Border BorderBrush="Black" BorderThickness="1" Background="Aqua">
+                            <Grid RenderTransformOrigin="0.518,1.336" Height="302" VerticalAlignment="Top" Margin="0,0,13.8,0">
+
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="81.6" />
+                                    <ColumnDefinition Width="313.6" />
+                                    <ColumnDefinition Width="0*"/>
+
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="173*" />
+                                    <RowDefinition Height="130*"/>
+                                    <!--<RowDefinition Height="68*" />
+      <RowDefinition Height="79*" />-->
+                                </Grid.RowDefinitions>
+
+                                <StackPanel Grid.Column="0" Grid.Row="0" Margin="0,0,35.2,0.4" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                                    <Image Name="imgKey"  Margin="8,8,0,8"   Source="/InnogrityLinePackingClient;component/resources/Innogrity.png" HorizontalAlignment="Left" Width="64" >
+                                        <Image.Effect>
+                                            <DropShadowEffect Color="Gray"   Opacity=".50" ShadowDepth="8" />
+                                        </Image.Effect>
+                                    </Image>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Margin="0.4,71,16.2,0.8">
+                                    <!--<TextBlock Text="Name" />
+                        <TextBox x:Name="nameBox" Margin="-1,0,22,0"/>-->
+                                    <TextBlock Text="Password" />
+                                    <PasswordBox x:Name="passwordBox" Margin="0,0,23,0"/>
+                                </StackPanel>
+
+
+
+                                <Label
+       Grid.Row="0"
+       FontSize="18"
+       Margin="0,17,138.2,0" Height="37" VerticalAlignment="Top" HorizontalAlignment="Right" Width="129" Grid.Column="1">Please Login
+                                </Label>
+                                <Button Content="Login" Grid.Column="1" HorizontalAlignment="Left" Margin="153.4,56.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Height="22" Click="ButtonLogin_Click"/>
+                                <Button Content="Cancel" Grid.Column="1" HorizontalAlignment="Left" Margin="32.4,57.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Height="22" Click="ButtonCancel_Click_1"/>
+
+                            </Grid>
+                        </Border>
+                    </Popup>
+
+
+
+
+
+
+
+
+
+
+                </Grid>
+            </DockPanel>
+        </Grid>
+        <GroupBox Header="Station 2" Grid.Column="1" Grid.RowSpan="2" Margin="5">
+            <DockPanel >
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                    <Label FontWeight="Bold">Current Label</Label>
+                    <Label Content= "{Binding Path=ReceiveFL, UpdateSourceTrigger=PropertyChanged, FallbackValue='ReceiveFL'}"  />
+                </StackPanel>
+
+                <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" DockPanel.Dock="Bottom" Margin="2">
+                    <DockPanel LastChildFill="True">
+                        <TextBlock DockPanel.Dock="Bottom" Background="Black" Foreground="#FFFFC0E6" TextWrapping="Wrap" 
+                                   Text="{Binding Path=networkmain.stn2log, FallbackValue='Strion 2 Log: Error Binding'}" />
+                    </DockPanel>
+                </ScrollViewer>
+            </DockPanel>
+        </GroupBox>
+        <GroupBox Header="Station 4" Grid.Column="2" Grid.RowSpan="1" Margin="5">
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Top">
+                    <StackPanel Orientation="Horizontal">
+                        <Label FontWeight="Bold" >Current Label</Label>
+                        <Label x:Name="BoxID62"  Content="{Binding Path=ScanboxidSt41, UpdateSourceTrigger=PropertyChanged, FallbackValue='RecievedFL'}" RenderTransformOrigin="0.658,4.348" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+                    </StackPanel>
+                </StackPanel>
+                <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" DockPanel.Dock="Bottom" Margin="2">
+                    <DockPanel LastChildFill="True">
+                        <TextBlock DockPanel.Dock="Bottom" Background="Black" Foreground="#FFADFDB7" TextWrapping="Wrap" Text="{Binding Path=networkmain.stn4log, FallbackValue='Strion 4 Log: Error Binding'}" />
+                    </DockPanel>
+                </ScrollViewer>
+            </DockPanel>
+        </GroupBox>
+
+        <GroupBox Header="Station 7" Grid.Column="3" Grid.RowSpan="1" Margin="5">
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Top">
+                    <StackPanel Orientation="Horizontal">
+                        <Label FontWeight="Bold" >Current Label</Label>
+                        <Label Content= "{Binding Path=st7Flabel, UpdateSourceTrigger=PropertyChanged, FallbackValue='ReceiveFL'}"  />
+
+                    </StackPanel>
+                </StackPanel>
+                <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" DockPanel.Dock="Bottom" Margin="2">
+                    <DockPanel LastChildFill="True">
+                        <TextBlock DockPanel.Dock="Bottom" Background="Black" Foreground="#FFACFFFD" TextWrapping="Wrap" Text="{Binding Path=networkmain.stn7log, FallbackValue='Strion 7 Log: Error Binding'}" />
+                    </DockPanel>
+                </ScrollViewer>
+            </DockPanel>
+        </GroupBox>
+
+        <GroupBox Header="Station 8" Grid.Column="3" Grid.Row="1" Grid.RowSpan="1" Margin="5">
+            <DockPanel>
+                <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" DockPanel.Dock="Bottom" Margin="2">
+                    <DockPanel LastChildFill="True">
+                        <TextBlock DockPanel.Dock="Bottom" Background="Black" Foreground="#FFEDFF8F" TextWrapping="Wrap" 
+                                   Text="{Binding Path=networkmain.stn8log, FallbackValue='Strion 8 Log: Error Binding'}" />
+                    </DockPanel>
+                </ScrollViewer>
+            </DockPanel>
+        </GroupBox>
+
+        <GroupBox Margin="5" Grid.Column="4" Grid.Row="3" Grid.RowSpan="1" Header="{Binding Path=networkmain.startdate, FallbackValue='log'}">
+            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" DockPanel.Dock="Bottom" Margin="2">
+                <DockPanel LastChildFill="True">
+                    <TextBlock DockPanel.Dock="Top" Background="Black" Foreground="Wheat" TextWrapping="Wrap" Text="{Binding Path=networkmain.OperatorLog, FallbackValue='Error Binding'}" />
+                </DockPanel>
+            </ScrollViewer>
+
+        </GroupBox>
+
+        <GroupBox Margin="5" Grid.Column="2" Grid.Row="2" Grid.RowSpan="1" Header="Station 6">
+            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" DockPanel.Dock="Bottom" Margin="2">
+                <DockPanel LastChildFill="True">
+                    <TextBlock DockPanel.Dock="Top" Background="Black" Foreground="#FFCBB3F5" TextWrapping="Wrap" 
+                               Text="{Binding Path=networkmain.stn6log, FallbackValue='Station 6: Error Binding'}" />
+                </DockPanel>
+            </ScrollViewer>
+
+        </GroupBox>
+
+        <GroupBox Margin="5" Grid.Column="2" Grid.Row="1" Grid.RowSpan="1" Header="Station 5">
+            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" DockPanel.Dock="Bottom" Margin="2">
+                <DockPanel LastChildFill="True">
+                    <TextBlock DockPanel.Dock="Top" Background="Black" Foreground="#FFF4BC97" TextWrapping="Wrap" Text="{Binding Path=networkmain.stn5log, FallbackValue='Station 5 Log: Error Binding'}" />
+                </DockPanel>
+            </ScrollViewer>
+
+        </GroupBox>
+        <GroupBox Margin="5" Grid.Column="1" Grid.Row="3" Grid.RowSpan="1" Header="Station 3">
+            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" DockPanel.Dock="Bottom" Margin="2">
+                <DockPanel LastChildFill="True">
+                    <TextBlock DockPanel.Dock="Top" Background="Black" Foreground="#FFB3F5CB" 
+                               TextWrapping="Wrap" Text="{Binding Path=networkmain.stn3log, FallbackValue='Station 4: Error Binding'}" />
+                </DockPanel>
+            </ScrollViewer>
+
+        </GroupBox>
+        <StackPanel Grid.Column="4" Grid.Row="3" Visibility="Collapsed">
+            <CheckBox  Checked="contrunchecked_Checked_1" Unchecked="contrunchecked_Unchecked_1" 
+                               Grid.Column="0" Grid.Row="0" Name="contrunchecked" Content="Run Label Files" HorizontalAlignment="Center" VerticalAlignment="Center" Height="16" Margin="10,9,44,5" Width="96" ></CheckBox>
+            <Button Grid.Column="1" Grid.Row="0" Name="btnOpenFile" Content="Open File" Margin="0,2,0,-2" Click="Button_Click_2" Grid.RowSpan="2" />
+            <Label Grid.Column="2" Grid.Row="0" Name="labelfilename" Content="File :"/>
+            <ToggleButton Name="btnConRunStart" Checked="btnConRunStart_Checked_1" Unchecked="btnConRunStart_Unchecked_1" Content="Continous Send Label File Start" Grid.Column="1" Grid.Row="1" Margin="0,10,0,-44" IsEnabled="False"></ToggleButton>
+        </StackPanel>
+    </Grid>
+</Page>

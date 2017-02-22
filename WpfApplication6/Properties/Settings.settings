@@ -1,0 +1,324 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="InnogrityLinePackingClient.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="lblXmin2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">-4</Value>
+    </Setting>
+    <Setting Name="lblXmax2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="lblYmin2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">-4</Value>
+    </Setting>
+    <Setting Name="lblYmax2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="lblDegmin2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">-3</Value>
+    </Setting>
+    <Setting Name="lblDegmax2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="printTopmin2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.14</Value>
+    </Setting>
+    <Setting Name="printTopmax2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="printBtmmin2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.14</Value>
+    </Setting>
+    <Setting Name="printBtmmax2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="printLefmin2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.14</Value>
+    </Setting>
+    <Setting Name="printLefmax2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="printRitemin2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.14</Value>
+    </Setting>
+    <Setting Name="printRitemax2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="SpekTopmin2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="SpekTopmax2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="SpekBtmmin2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="SpekBtmmax2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="SpekLefmin2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="SpekLefmax2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="SpekRitemin2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="SpekRitemax2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="IntTopmin2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="IntTopmax2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="IntBtmmin2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="IntBtmmax2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="IntLefmin2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="IntLefmax2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="IntRitemin2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="IntRitemax2" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="lblXmin4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">-4</Value>
+    </Setting>
+    <Setting Name="lblXmax4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="lblYmin4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">-4</Value>
+    </Setting>
+    <Setting Name="lblYmax4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="lblDegmin4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">-3</Value>
+    </Setting>
+    <Setting Name="lblDegmax4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="printTopmin4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.14</Value>
+    </Setting>
+    <Setting Name="printTopmax4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="printBtmmin4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.14</Value>
+    </Setting>
+    <Setting Name="printBtmmax4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="printLefmin4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.14</Value>
+    </Setting>
+    <Setting Name="printLefmax4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="printRitemin4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.14</Value>
+    </Setting>
+    <Setting Name="printRitemax4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="SpekTopmin4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="SpekTopmax4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="SpekBtmmin4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="SpekBtmmax4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="SpekLefmin4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="SpekLefmax4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="SpekRitemin4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="SpekRitemax4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="IntTopmin4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="IntTopmax4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="IntBtmmin4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="IntBtmmax4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="IntLefmin4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="IntLefmax4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="IntRitemin4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="IntRitemax4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="lblXmin7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">-4</Value>
+    </Setting>
+    <Setting Name="lblXmax7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="lblYmin7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">-4</Value>
+    </Setting>
+    <Setting Name="lblYmax7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="lblDegmin7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">-3</Value>
+    </Setting>
+    <Setting Name="lblDegmax7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="printTopmin7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.14</Value>
+    </Setting>
+    <Setting Name="printTopmax7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="printBtmmin7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.14</Value>
+    </Setting>
+    <Setting Name="printBtmmax7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="printLefmin7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.14</Value>
+    </Setting>
+    <Setting Name="printLefmax7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="printRitemin7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.14</Value>
+    </Setting>
+    <Setting Name="printRitemax7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="lblXmin7a" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">-4</Value>
+    </Setting>
+    <Setting Name="lblXmax7a" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="lblYmin7a" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">-4</Value>
+    </Setting>
+    <Setting Name="lblYmax7a" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="lblDegmin7a" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">-3</Value>
+    </Setting>
+    <Setting Name="lblDegmax7a" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="printTopmin7a" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.14</Value>
+    </Setting>
+    <Setting Name="printTopmax7a" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="printBtmmin7a" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.14</Value>
+    </Setting>
+    <Setting Name="printBtmmax7a" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="printLefmin7a" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.14</Value>
+    </Setting>
+    <Setting Name="printLefmax7a" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="printRitemin7a" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.14</Value>
+    </Setting>
+    <Setting Name="printRitemax7a" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="SpekTopmin7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="SpekTopmax7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="SpekBtmmin7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="SpekBtmmax7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="SpekLefmin7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="SpekLefmax7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="SpekRitemin7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="SpekRitemax7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="IntTopmin7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="IntTopmax7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="IntBtmmin7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="IntBtmmax7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="IntLefmin7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="IntLefmax7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="IntRitemin7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="IntRitemax7" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">99999</Value>
+    </Setting>
+    <Setting Name="SpekDegmin4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">175</Value>
+    </Setting>
+    <Setting Name="SpekDegmax4" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">185</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

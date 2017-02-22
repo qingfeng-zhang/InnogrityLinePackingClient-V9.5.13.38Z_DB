@@ -1,0 +1,30 @@
+﻿<Page x:Class="IGTwpf.views.SendParameterchange"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" d:DesignWidth="300"
+	Title="Page1" Height="320">
+
+    <Grid Margin="0,0,0,-14">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="321*"/>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Parameter Change" HorizontalAlignment="Left" Margin="119,28,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="147,81,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="StationID" HorizontalAlignment="Left" Height="23" Margin="147,81,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ParamName" HorizontalAlignment="Left" Height="23" Margin="147,119,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="UserName" HorizontalAlignment="Left" Height="23" Margin="147,156,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="OldValue" HorizontalAlignment="Left" Height="23" Margin="147,194,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="NewValue" HorizontalAlignment="Left" Height="23" Margin="147,232,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="New Value" HorizontalAlignment="Left" Margin="24,230,0,0" VerticalAlignment="Top"/>
+        <Label Content="Old Value" HorizontalAlignment="Left" Margin="24,194,0,0" VerticalAlignment="Top"/>
+        <Label Content="User Name" HorizontalAlignment="Left" Margin="24,156,0,0" VerticalAlignment="Top"/>
+        <Label Content="Parameter Name" HorizontalAlignment="Left" Margin="24,119,0,0" VerticalAlignment="Top"/>
+        <Label Content="Station Name" HorizontalAlignment="Left" Margin="24,81,0,0" VerticalAlignment="Top"/>
+        <Button Content="Send" HorizontalAlignment="Left" Margin="107,277,0,0" Click="Button_Click_1" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Page>

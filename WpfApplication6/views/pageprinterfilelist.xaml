@@ -1,0 +1,235 @@
+﻿<Page x:Class="InnogrityLinePackingClient.views.pageprinterfilelist"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="859.511" d:DesignWidth="625.94"
+	Title="pageprinterfilelist">
+
+
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="0.2*" />
+                <RowDefinition Height="0.2*" />
+                <RowDefinition Height="0.2*" />
+                <RowDefinition Height="0.2*" />
+        </Grid.RowDefinitions>
+            <Grid Grid.Column="0"  Grid.Row ="0" Margin="5,0,0,0" >
+                <Grid.DataContext >
+                    <XmlDataProvider x:Name="FLdataprovider" XPath="BOXID/FILE"/>
+                </Grid.DataContext >
+                <DockPanel >
+                    <Grid Height="30" Background="#4E87D4" DockPanel.Dock="Top" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Column="0" Grid.Row="0" Margin="0 0 10 0">Printer :</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding XPath=//BOXID/PRINTER}"></TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="1">ID :</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding XPath=//BOXID/ID}"></TextBlock>
+                    </Grid>
+                    <ListView x:Name="TeamsListBox2" Margin="0,0,0,20" DockPanel.Dock="Left" 
+                     ItemsSource="{Binding XPath=//BOXID/FILE}"
+                     IsSynchronizedWithCurrentItem="True"
+                     Visibility="Visible" SelectionMode="Single">
+                        <ListView.View>
+                            <GridView>
+                                <GridView.Columns>
+                                    <GridViewColumn DisplayMemberBinding="{Binding XPath=FILE_NAME}" Header="File Name"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding XPath=SURFACE}" Header="Surface"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding XPath=COORDINATE_X}" Header="Coordinate X"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding XPath=COORDINATE_Y}" Header="Coordinate Y"/>
+                                </GridView.Columns>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </DockPanel>
+            </Grid>
+            <Grid Grid.Column="0"  Grid.Row ="1" Margin="5,0,0,0"   >
+                <Grid.DataContext >
+                    <XmlDataProvider x:Name="FLdataprovider1" XPath="BOXID/FILE"/>
+                </Grid.DataContext >
+                <DockPanel >
+                    <Grid Height="30" Background="#4E87D4" DockPanel.Dock="Top"  >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+
+                        <TextBlock Grid.Column="0" Grid.Row="0" Margin="0 0 10 0">Printer :</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding XPath=//BOXID/PRINTER}"></TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="1">ID :</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding XPath=//BOXID/ID}"></TextBlock>
+                    </Grid>
+                    <ListView x:Name="TeamsListBox22" Margin="0,0,0,20"  MaxHeight="500" DockPanel.Dock="Left"
+                     ItemsSource="{Binding XPath=//BOXID/FILE}"
+                     IsSynchronizedWithCurrentItem="True"
+                     Visibility="Visible" SelectionMode="Single">
+                        <ListView.View>
+                            <GridView>
+                                <GridView.Columns>
+                                    <GridViewColumn DisplayMemberBinding="{Binding XPath=FILE_NAME}" Header="File Name"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding XPath=SURFACE}" Header="Surface"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding XPath=COORDINATE_X}" Header="Coordinate X"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding XPath=COORDINATE_Y}" Header="Coordinate Y"/>
+                                </GridView.Columns>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </DockPanel>
+            </Grid>
+            <Grid Grid.Column="1"  Grid.Row ="0" Margin="5,0,0,0" >
+                <Grid.DataContext >
+                    <XmlDataProvider x:Name="FLdataprovider11" XPath="BOXID/FILE"/>
+                </Grid.DataContext >
+                <DockPanel >
+                    <Grid Height="30" Background="#4E87D4" DockPanel.Dock="Top" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+
+                        <TextBlock Grid.Column="0" Grid.Row="0" Margin="0 0 10 0">Printer :</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding XPath=//BOXID/PRINTER}"></TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="1">ID :</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding XPath=//BOXID/ID}"></TextBlock>
+                    </Grid>
+                    <ListView x:Name="TeamsListBox222" Margin="0,0,0,20"  MaxHeight="500" DockPanel.Dock="Left"
+                     ItemsSource="{Binding XPath=//BOXID/FILE}"
+                     IsSynchronizedWithCurrentItem="True"
+                     Visibility="Visible" SelectionMode="Single">
+                        <ListView.View>
+                            <GridView>
+                                <GridView.Columns>
+                                    <GridViewColumn DisplayMemberBinding="{Binding XPath=FILE_NAME}" Header="File Name"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding XPath=SURFACE}" Header="Surface"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding XPath=COORDINATE_X}" Header="Coordinate X"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding XPath=COORDINATE_Y}" Header="Coordinate Y"/>
+                                </GridView.Columns>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </DockPanel>
+            </Grid>
+            <Grid Grid.Column="1"  Grid.Row ="1" Margin="5,0,0,0"   >
+                <Grid.DataContext >
+                    <XmlDataProvider x:Name="FLdataprovider111" XPath="BOXID/FILE"/>
+                </Grid.DataContext >
+                <DockPanel >
+                    <Grid Height="30" Background="#4E87D4" DockPanel.Dock="Top" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+
+                        <TextBlock Grid.Column="0" Grid.Row="0" Margin="0 0 10 0">Printer :</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding XPath=//BOXID/PRINTER}"></TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="1">ID :</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding XPath=//BOXID/ID}"></TextBlock>
+                    </Grid>
+                    <ListView x:Name="TeamsListBox2221" Margin="0,0,0,20"  MaxHeight="500" DockPanel.Dock="Left"
+                     ItemsSource="{Binding XPath=//BOXID/FILE}"
+                     IsSynchronizedWithCurrentItem="True"
+                     Visibility="Visible" SelectionMode="Single">
+                        <ListView.View>
+                            <GridView>
+                                <GridView.Columns>
+                                    <GridViewColumn DisplayMemberBinding="{Binding XPath=FILE_NAME}" Header="File Name"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding XPath=SURFACE}" Header="Surface"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding XPath=COORDINATE_X}" Header="Coordinate X"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding XPath=COORDINATE_Y}" Header="Coordinate Y"/>
+                                </GridView.Columns>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </DockPanel>
+            </Grid>
+
+        <Grid Grid.Column="0"  Grid.Row ="2" Margin="5,0,10,0" Grid.ColumnSpan="2" >
+            <DockPanel >
+                <Grid Height="30"  DockPanel.Dock="Top" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Column="0"  Grid.Row="0" Margin="0 0 10 0" Click="Button_Click_1">Request Finishing Label</Button>
+                    <TextBox x:Name="BoxID" Grid.Column="1" Grid.Row="0" >BYNDXQ.21</TextBox>
+
+                </Grid>
+            </DockPanel>
+        </Grid>
+        <Grid Grid.Column="0"  Grid.Row ="3" Margin="5,0,10,0" Grid.ColumnSpan="2" >
+            <DockPanel Margin="10,0,-10,0" >
+                <Grid Height="30"  DockPanel.Dock="Top" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Column="0"  Grid.Row="0" Margin="0,0,400,0" Click="btnStation2print"  Grid.ColumnSpan="2">Station 02 </Button>
+                </Grid>
+            </DockPanel>
+        </Grid>
+        <Grid Grid.Column="1"  Grid.Row ="3" Margin="5,0,10,0" Grid.ColumnSpan="2" >
+            <DockPanel >
+                <Grid Height="30"  DockPanel.Dock="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Column="0"  Margin="0,0,100,0"   Click="btnStation4print" Grid.ColumnSpan="2">Station 04</Button>
+                </Grid>
+            </DockPanel>
+        </Grid>
+        <Grid Grid.Column="0"  Grid.Row ="4" Margin="5,0,10,0" Grid.ColumnSpan="2" >
+            <DockPanel >
+                <Grid Height="30"  DockPanel.Dock="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Column="0"  Margin="10,0,388,0"   Click="btnStation7print" Grid.ColumnSpan="2">Station 07</Button>
+                </Grid>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</Page>

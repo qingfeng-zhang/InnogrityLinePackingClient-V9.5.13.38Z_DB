@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19CF015C-F040-4B5B-A09A-D785D5E54BEB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InnogrityLinePackingClient</RootNamespace>
+    <AssemblyName>InnogrityLinePackingClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>resources\inno.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Client, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="microsoft.teamfoundation.controls, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.ExtensibilityHosting, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.3.1.0.0\lib\net40\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="StackBarControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\StackBarControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="Xceed.Wpf.DataGrid">
+      <HintPath>E:\InnogrityLinePackingClient v9.5.10Z(Server report)\WpfApplication6\bin\x64\Release\Xceed.Wpf.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>E:\InnogrityLinePackingClient v9.5.10Z(Server report)\WpfApplication6\bin\x64\Release\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="XMLViewer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ext reference\XMLViewer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BarcodeStatus.cs" />
+    <Compile Include="BarcodeStatusToVisibilityConverter.cs" />
+    <Compile Include="EugeneMainNetworkClass.cs" />
+    <Compile Include="FHNonProcedureSocket.cs" />
+    <Compile Include="ImageDetails.cs" />
+    <Compile Include="ImageUriConverterClass.cs" />
+    <Compile Include="InnovacVacuumSealer.cs" />
+    <Compile Include="LinePackInspection.cs" />
+    <Compile Include="NetworkThread.cs" />
+    <Compile Include="NetworkThread\AddedFunction.cs" />
+    <Compile Include="NetworkThread\EugenesNetworkThreadforErrors.cs" />
+    <Compile Include="NetworkThread\MiddlewareScan.cs" />
+    <Compile Include="NetworkThread\PLC01Scan.cs" />
+    <Compile Include="NetworkThread\PLC02Scan.cs" />
+    <Compile Include="NetworkThread\Poll.cs" />
+    <Compile Include="NetworkThread\Station02Scan.cs" />
+    <Compile Include="NetworkThread\Station04Scanner.cs" />
+    <Compile Include="NetworkThread\Station04ScannerConnect.cs" />
+    <Compile Include="NetworkThread\Station05Sealer1.cs" />
+    <Compile Include="NetworkThread\Station05Sealer2.cs" />
+    <Compile Include="NetworkThread\Station05Sealer3.cs" />
+    <Compile Include="NetworkThread\Station05Sealers.cs" />
+    <Compile Include="NetworkThread\Station06OOperator01ScannerConnect.cs" />
+    <Compile Include="NetworkThread\Station06OOperator02ScannerConnect.cs" />
+    <Compile Include="NetworkThread\Station06Operator01Scan.cs" />
+    <Compile Include="NetworkThread\Station06Operator02Scan.cs" />
+    <Compile Include="NetworkThread\Station6_7_8.cs" />
+    <Compile Include="NetworkThread\UploadHandScannerData.cs" />
+    <Compile Include="operator1window.xaml.cs">
+      <DependentUpon>operator1window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="operator2window.xaml.cs">
+      <DependentUpon>operator2window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQuery.cs" />
+    <Compile Include="TelnetClient.cs" />
+    <Compile Include="views\Base\footer.xaml.cs">
+      <DependentUpon>footer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\Base\Header.xaml.cs">
+      <DependentUpon>Header.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\IGTReport.xaml.cs">
+      <DependentUpon>IGTReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\OmronVision.xaml.cs">
+      <DependentUpon>OmronVision.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\Operator1Login.xaml.cs">
+      <DependentUpon>Operator1Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\Operator2Login.xaml.cs">
+      <DependentUpon>Operator2Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\ServerCheck.xaml.cs">
+      <DependentUpon>ServerCheck.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\Station1.xaml.cs">
+      <DependentUpon>Station1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\pageFG01_FG02_MOVE.xaml.cs">
+      <DependentUpon>pageFG01_FG02_MOVE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\pageMainPanelDisplay.xaml.cs">
+      <DependentUpon>pageMainPanelDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\pageFinishingLabelInformation.xaml.cs">
+      <DependentUpon>pageFinishingLabelInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\pageprinterfilelist.xaml.cs">
+      <DependentUpon>pageprinterfilelist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\SendMsgDlgReply.xaml.cs">
+      <DependentUpon>SendMsgDlgReply.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\SendAlarmMessageDlg.xaml.cs">
+      <DependentUpon>SendAlarmMessageDlg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\sendAQL_BOXDlg.xaml.cs">
+      <DependentUpon>sendAQL_BOXDlg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\sendFG01_FG02_MOVEDlg.xaml.cs">
+      <DependentUpon>sendFG01_FG02_MOVEDlg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\SendParameterchange.xaml.cs">
+      <DependentUpon>SendParameterchange.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\QcStationLogoutMsgDialog.xaml.cs">
+      <DependentUpon>QcStationLogoutMsgDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\SendMsgDialog.xaml.cs">
+      <DependentUpon>SendMsgDialog.xaml</DependentUpon>
+    </Compile>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="views\Station2.xaml.cs">
+      <DependentUpon>Station2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\Station3.xaml.cs">
+      <DependentUpon>Station3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\Station4.xaml.cs">
+      <DependentUpon>Station4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\Station5.xaml.cs">
+      <DependentUpon>Station5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\Station6.xaml.cs">
+      <DependentUpon>Station6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\Station7.xaml.cs">
+      <DependentUpon>Station7.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\Station8.xaml.cs">
+      <DependentUpon>Station8.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\TechnicianPage.xaml.cs">
+      <DependentUpon>TechnicianPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\WinMsgTesting.xaml.cs">
+      <DependentUpon>WinMsgTesting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZebraPrinter.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="MainNetworkClass.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="operator1window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="operator2window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\Base\footer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\Base\Header.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\IGTReport.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\OmronVision.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\Operator1Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\Operator2Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\ServerCheck.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\Station1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\pageFG01_FG02_MOVE.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\pageMainPanelDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\pageFinishingLabelInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\pageprinterfilelist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\SendMsgDlgReply.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\SendAlarmMessageDlg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\sendAQL_BOXDlg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\sendFG01_FG02_MOVEDlg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\SendParameterchange.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\QcStationLogoutMsgDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\SendMsgDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\Station2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\Station3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\Station4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\Station5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\Station6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\Station7.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\Station8.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\TechnicianPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\WinMsgTesting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NetworkThread\network utility\clsTCP.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\buttons\OEEid.png" />
+    <Content Include="resources\AllStJamUpdate.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\IGTChartQuery1.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\IGTChartQuery4.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\IGTChartQuery3.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\IGTChartQuery2.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\IGTChartQuery.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="resources\IGTOEE.png" />
+    <Content Include="resources\ReportDatabase.mdf" />
+    <Content Include="resources\ReportDatabase_log.ldf">
+      <DependentUpon>ReportDatabase.mdf</DependentUpon>
+    </Content>
+    <Content Include="resources\ReqJamFLCatch.sql" />
+    <Content Include="resources\SQLQuery1.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="resources\Refresh.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\Innogrity full.png" />
+    <Resource Include="resources\innogrity.ico" />
+    <Resource Include="resources\faviconbig.ico" />
+    <Resource Include="resources\inno.ico" />
+    <Resource Include="resources\buttons\btnConnectionCheck_over.png" />
+    <Resource Include="resources\buttons\btnConnectionCheckMonitor.png" />
+    <Resource Include="resources\buttons\btnStn6Technician_over.png" />
+    <Resource Include="resources\buttons\btnst6Technician.png" />
+    <Resource Include="resources\buttons\OmronV.png" />
+    <Content Include="resources\ext reference\XMLViewer.dll" />
+    <Content Include="NetworkThread\network utility\clsUDP.vb" />
+    <Resource Include="resources\topic1_icon4.png" />
+    <Resource Include="resources\Station2.png" />
+    <Resource Include="resources\Station3.png" />
+    <Resource Include="resources\Station4.png" />
+    <Resource Include="resources\Station5.png" />
+    <Resource Include="resources\Station6.png" />
+    <Resource Include="resources\Station7.png" />
+    <Resource Include="resources\Station8.png" />
+    <Resource Include="resources\Stati2.png" />
+    <Resource Include="resources\Station1.png" />
+    <Resource Include="resources\robotanimations\roboarm-1.jpg" />
+    <Resource Include="resources\robotanimations\roboarm-10.jpg" />
+    <Resource Include="resources\robotanimations\roboarm-11.jpg" />
+    <Resource Include="resources\robotanimations\roboarm-2.jpg" />
+    <Resource Include="resources\robotanimations\roboarm-3.jpg" />
+    <Resource Include="resources\robotanimations\roboarm-4.jpg" />
+    <Resource Include="resources\robotanimations\roboarm-5.jpg" />
+    <Resource Include="resources\robotanimations\roboarm-6.jpg" />
+    <Resource Include="resources\robotanimations\roboarm-7.jpg" />
+    <Resource Include="resources\robotanimations\roboarm-8.jpg" />
+    <Resource Include="resources\robotanimations\roboarm-9.jpg" />
+    <Resource Include="resources\buttons\btnMain.png" />
+    <Resource Include="resources\buttons\btnMain_over.png" />
+    <Resource Include="resources\buttons\btnMain_pressed.png" />
+    <Resource Include="resources\buttons\btnprinter.png" />
+    <Resource Include="resources\buttons\btnprinter_over.png" />
+    <Resource Include="resources\buttons\btnprinter_pressed.png" />
+    <Resource Include="resources\buttons\btnfinishinglabelMonitor.png" />
+    <Resource Include="resources\buttons\btnfinishinglabelMonitor_over.png" />
+    <Resource Include="resources\buttons\btnfinishinglabelMonitor_pressed.png" />
+    <Resource Include="resources\MSB LAYOUT.jpg" />
+    <Resource Include="resources\Innogrity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\LPAUtils\LPAUtils.csproj">
+      <Project>{426e392b-9659-41bd-9910-acd581d41fa6}</Project>
+      <Name>LPAUtils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
